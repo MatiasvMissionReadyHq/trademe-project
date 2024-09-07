@@ -1,9 +1,10 @@
 const express= require('express');  
 const router = express.Router();
 
-const getAllItems = require('../Controller/mongoDB');
-router.get('/getItems', getAllItems.getItems);
-router.post('/getItemsById', getAllItems.getItemsById);
+const mongoApi = require('../Controller/mongoDB');
+router.get('/getCategories', mongoApi.getCategories);
+router.get('/getItems', mongoApi.getItems);
+router.post('/getItemsById', mongoApi.getItemsById);
 
 module.exports = router;
 

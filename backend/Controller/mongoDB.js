@@ -4,6 +4,34 @@ require('dotenv').config();
  // MongoDB connection string
  const client = new MongoClient(process.env.MONGODB_URI);
 
+ module.exports.getCategories = async(req, res) => {
+    try{
+        // Connect to the MongoDB cluster
+        await client.connect();
+
+        // Specify the database and collection
+        const database = client.db("items");
+        const vehiclesCollection = database.collection("vehicles");
+
+         // Get distinct values for a specific field (e.g., 'type')
+        const distinctValues = await vehiclesCollection.distinct("type");
+
+        if (distinctValues === null) {
+            res.status(404).json({ error: 'No results found' });
+            return;
+        }
+        res.status(200).json(distinctValues);
+        await client.close();
+        console.log(distinctValues);
+        return;
+    } 
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'An error occurred while processing your request.' });
+    }
+}
+
+
 module.exports.getItems = async(req, res) => {
 
     try{

@@ -9,6 +9,11 @@ const Carousel = (props) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext= () => {
+
+        if(typeof(photos) === 'undefined'){
+            alert('No photos available');
+            return;
+        }
         let activeIndex = (currentIndex <= photos.length-1) ? currentIndex + 1 : 0;
         if(activeIndex>photos.length-1){
             activeIndex=0;
@@ -17,6 +22,11 @@ const Carousel = (props) => {
     };
     
     const handlePrev = () => {
+
+        if(typeof(photos) === 'undefined'){
+            alert('No photos available');
+            return;
+        }
         let activeIndex = (currentIndex > 0) ? currentIndex - 1 : photos.length - 1;
         setCurrentIndex(activeIndex);
     };
@@ -26,7 +36,7 @@ const Carousel = (props) => {
 
     return (
         <>
-            {
+            {Array.isArray(photos) && photos.length > 0 ? (
                 photos.map((photo, index) => {
                     return (
                         <img key={index}
@@ -39,7 +49,12 @@ const Carousel = (props) => {
                         />
                     );
                 })
+                ) : (
+                <li>No items available</li>
+                )
             }
+
+           
             <div className={styles['carousel-controls']}>
                 <span className={styles.prev} onClick={handlePrev}>
                     ‹
