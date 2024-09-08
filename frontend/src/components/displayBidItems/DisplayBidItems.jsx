@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import style from './index.module.css';
-import Carousel from './components/Carousel';
+import style from './displayBidItems.module.css';
+import Carousel from '../listItems/components/Carousel';
 
 
-function ItemsListing({items, itemsIds, setItemsId, fetchAllData, styleSingleItem}) {
+function DisplayBidItems({items, itemsIds, setItemsId, fetchAllData, styleSingleItem}) {
 
 
     // const {itemsIds, setItemsId, items, fetchAllData} = props;
@@ -71,7 +71,7 @@ function ItemsListing({items, itemsIds, setItemsId, fetchAllData, styleSingleIte
         <>
             <div className={styles.container}>
                 {items.map((item, i) => {
-                    
+                    if(item.userBid === true)
                     return (
                         <div className={styles.card} key={item._id}>
                             <div className={styles.carousel}>
@@ -113,6 +113,6 @@ function ItemsListing({items, itemsIds, setItemsId, fetchAllData, styleSingleIte
             </div>
         </>
     );
-}
-export default ItemsListing;
-        
+}       
+
+export default DisplayBidItems;

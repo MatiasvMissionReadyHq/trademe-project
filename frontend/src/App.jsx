@@ -6,6 +6,8 @@ import PostDetail from './components/postDetails/PostDetail';
 import CustomSelect from './components/customSelect/CustomSelect';
 import CompareItemsButton from './components/compareItems/CompareItemsButton';
 import CompareItemsComponent from './components/compareItems/CompareItemsComponent';
+import BidItemsButton from './components/displayBidItems/components/BidItemsButton';
+import DisplayBidItems from './components/displayBidItems/DisplayBidItems';
 
 function App() {
 
@@ -14,6 +16,7 @@ function App() {
   const [distinctCategories, setDistinctCategories] = useState([]);
   const [filerType, setFilterType] = useState([]);
   const [itemsIds, setItemsId] = useState([]);
+  const [userBid, setUserBid] = useState(false);
 
   /***********States and function to handle the select dropdown***********/
   const [selectedOption, setSelectedOption] = useState('');
@@ -30,6 +33,13 @@ function App() {
 
     const filteredItems = items.filter(item => item.type === selectedOption);
 
+    //update state if any user bid on any item
+    const filteredUserBid = items.filter(item => item.userBid === true);
+    if(filteredUserBid.length > 0){
+      setUserBid(true);
+    }else{
+      setUserBid(false);
+    }  
     //check if any filter applied before load the cards
     if(filteredItems.length > 0){
       setFilterType(filteredItems);
@@ -90,18 +100,22 @@ function App() {
   return (
     <>
       {location.pathname ==='/' 
-      ? <>
+      ? <div className='header-container'>
           <CustomSelect selectedOption={selectedOption} setSelectedOption={setSelectedOption} isOpen={isOpen} setIsOpen={setIsOpen} options={distinctCategories} setItemsId={setItemsId}/>
           {filerType.length > 1 && 
             <CompareItemsButton itemsIds={itemsIds}/>
-      }
-        </>
+          }
+          {userBid === true &&
+            <BidItemsButton/>
+          }
+        </div>
     :null}
       
       <Routes>
         <Route path="/" element={<ItemsListing items={filerType} itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchAllData}/>}/>
         <Route path="/postDetail/:id" element={<PostDetail itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchAllData}/>} />
         <Route path="/compareItems" element={<CompareItemsComponent items={items} itemsIds={itemsIds} />} />
+        <Route path="/bidItems" element={<DisplayBidItems items={filerType} itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchAllData}/>} />
       </Routes>
     </>
   )

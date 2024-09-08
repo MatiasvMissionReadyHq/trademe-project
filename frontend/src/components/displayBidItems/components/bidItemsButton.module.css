@@ -1,6 +1,6 @@
-.compare-items-btn {
+.bid-items-btn {
     position: fixed;
-    right: 120px;
+    right: 320px;
     top: 30px;
     background-color: #e67e22;
     color: #fff;
@@ -12,6 +12,6 @@
     z-index: 1;
 }
 
-.compare-items-btn:hover {
+.bid-items-btn:hover {
     background-color: #c76a2c;
 }

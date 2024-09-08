@@ -1,12 +1,12 @@
 .custom-select-container {
     width: 200px;
-    position: relative;
     font-family: Arial, sans-serif;
-    margin-bottom: 20px;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     background-color: #242424;
     border-radius: 8px;
+    top: 10px;
+    left: 10px;
 }
 
 .custom-select {

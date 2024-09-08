@@ -5,6 +5,17 @@
   /* text-align: center; */
 }
 
+
+.header-container{
+  position:fixed;
+  background-color: #fff;
+  top:0px;
+  left:0px;
+  right: 0px;
+  height: 100px;
+  z-index: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
