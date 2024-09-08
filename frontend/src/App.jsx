@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
 import './App.css'
 import  ItemsListing  from './components/listItems/ItemsListing';
 import PostDetail from './components/postDetails/PostDetail';
 import CustomSelect from './components/customSelect/CustomSelect';
-import { Routes, Route, useLocation } from "react-router-dom";
+import CompareItemsButton from './components/compareItems/CompareItemsButton';
+import CompareItemsComponent from './components/compareItems/CompareItemsComponent';
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
   const location = useLocation();
   const [distinctCategories, setDistinctCategories] = useState([]);
   const [filerType, setFilterType] = useState([]);
+  const [itemsIds, setItemsId] = useState([]);
 
   /***********States and function to handle the select dropdown***********/
   const [selectedOption, setSelectedOption] = useState('');
@@ -24,9 +27,17 @@ function App() {
       .filter(category => category !== undefined && category !== '')  // Filter out undefined or empty categories
     )];
     setDistinctCategories(uniqueCategories);
+
+    const filteredItems = items.filter(item => item.type === selectedOption);
+
+    //check if any filter applied before load the cards
+    if(filteredItems.length > 0){
+      setFilterType(filteredItems);
+      return;
+    }  
     setFilterType(items);
 
-  }, [items]);
+  }, [items, selectedOption]);
 
   useEffect(() => {
 
@@ -44,9 +55,19 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    return () => {
+      if(items.length < 1){
+        fetchAllData();
+      }
+    };
+  }, [location]);
+
 
   // Fetch to the backend to get the response from the AI
-  async function fetchAllData(){
+
+  const fetchAllData = async () => {
+  // async function fetchAllData(){
 
       const options = {
       method: 'GET',
@@ -59,7 +80,6 @@ function App() {
           const response = await fetch('http://localhost:3000/getItems', options)
           const data = await response.json()
           setItems(data);
-          //console.log(data)
           
       }
       catch(error){
@@ -69,13 +89,19 @@ function App() {
 
   return (
     <>
-      {location.pathname=='/' 
-      ? <CustomSelect selectedOption={selectedOption} setSelectedOption={setSelectedOption} isOpen={isOpen} setIsOpen={setIsOpen} options={distinctCategories}/>
+      {location.pathname ==='/' 
+      ? <>
+          <CustomSelect selectedOption={selectedOption} setSelectedOption={setSelectedOption} isOpen={isOpen} setIsOpen={setIsOpen} options={distinctCategories} setItemsId={setItemsId}/>
+          {filerType.length > 1 && 
+            <CompareItemsButton itemsIds={itemsIds}/>
+      }
+        </>
     :null}
       
       <Routes>
-        <Route path="/" element={<ItemsListing items={filerType}/>}/>
-        <Route path="/postDetail/:id" element={<PostDetail />} />
+        <Route path="/" element={<ItemsListing items={filerType} itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchAllData}/>}/>
+        <Route path="/postDetail/:id" element={<PostDetail itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchAllData}/>} />
+        <Route path="/compareItems" element={<CompareItemsComponent items={items} itemsIds={itemsIds} />} />
       </Routes>
     </>
   )

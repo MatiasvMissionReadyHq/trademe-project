@@ -2,9 +2,11 @@
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import ItemsListing from "../listItems/ItemsListing";
+import styles from "./postDetail.module.css";
 
-function PostDetail() {
+function PostDetail(props) {
     const { id } = useParams();  // Get the post ID from the URL params
+    const {itemsIds, setItemsId, fetchAllData} = props;
 
     const [items, setItems] = useState([]);
 
@@ -25,8 +27,7 @@ function PostDetail() {
 
         try{
             const response = await fetch('http://localhost:3000/getItemsById', options)
-            const data = await response.json()
-            //setItems(data);
+            const data = await response.json();
             setItems([data]);
             //console.log(data)
             
@@ -37,7 +38,7 @@ function PostDetail() {
     }
     return (
         <>
-            <ItemsListing items={items}/>
+            <ItemsListing items={items} itemsIds={itemsIds} setItemsId={setItemsId} fetchAllData={fetchDataById} styleSingleItem={styles}/>
         </>
     );
 }

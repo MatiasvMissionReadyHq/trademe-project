@@ -1,0 +1,16 @@
+.compare-items-btn {
+    position: absolute;
+    right: 120px;
+    top: 30px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.compare-items-btn:hover {
+    background-color: #c76a2c;
+}

@@ -55,7 +55,7 @@ module.exports.getItems = async(req, res) => {
         }
         res.status(200).json(result);
         await client.close();
-        console.log(result);
+        //console.log(result);
         return;
 
     } 

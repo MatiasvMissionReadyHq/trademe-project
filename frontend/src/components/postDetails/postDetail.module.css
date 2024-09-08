@@ -1,0 +1,147 @@
+.container {
+    margin: auto;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    /* gap: 10px; */
+    justify-content: left;
+    font-size: 12px;
+    flex-wrap: wrap;
+    /* margin-top: 100px; */
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    width: 1000%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    /* flex-direction: column; */
+    transition: transform 0.3s;
+    border: 1px solid grey;
+    flex: 1 0 25%; /* explanation below */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    display: none;
+    width: 700px;
+}
+
+.carousel-img.active {
+    opacity: 1;
+    display: block;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.carousel-controls span {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-details {
+    padding: 20px;
+}
+
+.card-details h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+link {
+    color: #333;
+    text-decoration: none;
+}
+
+.card-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.offer {
+    color: #e74c3c;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.card-footer {
+    padding: 30px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.compare-label {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: #555;
+}
+
+.compare-checkbox {
+    margin-right: 5px;
+}
+
+.bid-now-btn {
+    background-color: #e67e22;
+    width: 130px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bid-now-btn:hover {
+    background-color: #d35400;
+}

@@ -12,11 +12,13 @@ app.use(express.json())
 
 
 /* =================================== Import Routes ==================================== */
-const apiRouter = require('./Router/apiDataRetrieve') 
+const apiRouterRetrieve = require('./Router/apiDataRetrieve'); 
+const apiRouterUpdate = require('./Router/apiDataUpdate');
 
 
 /* ======================================= Routes ======================================= */
- app.use(apiRouter)
+ app.use(apiRouterRetrieve);
+ app.use(apiRouterUpdate);
 
 
 /* ================================= Default Root Routes ================================ */

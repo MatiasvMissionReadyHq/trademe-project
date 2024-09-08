@@ -4,7 +4,7 @@ import styles from './CustomSelect.module.css';
 
 const CustomSelect = (props) => {
     
-    const { selectedOption, setSelectedOption, isOpen, setIsOpen, options } = props;
+    const { selectedOption, setSelectedOption, isOpen, setIsOpen, options, setItemsId } = props;
 
     const handleSelect = (option) => {
         setSelectedOption(option);
@@ -12,8 +12,7 @@ const CustomSelect = (props) => {
     };
 
     useEffect(() => {
-    
-        console.log(selectedOption)
+        setItemsId([])
     }, [selectedOption]);
 
     return (
