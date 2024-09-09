@@ -73,6 +73,8 @@ function App() {
     };
   }, [location]);
 
+  
+
 
   // Fetch to the backend to get the response from the AI
 

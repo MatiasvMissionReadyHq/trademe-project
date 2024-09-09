@@ -8,8 +8,6 @@ function DisplayBidItems({items, itemsIds, setItemsId, fetchAllData, styleSingle
 
 
     // const {itemsIds, setItemsId, items, fetchAllData} = props;
-    
-
     const styles = typeof(styleSingleItem)!=='undefined' ? styleSingleItem : style;
 
     const location = useLocation();

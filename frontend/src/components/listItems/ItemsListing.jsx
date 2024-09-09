@@ -86,6 +86,8 @@ function ItemsListing({items, itemsIds, setItemsId, fetchAllData, styleSingleIte
                                 <p className={styles.location}><span style={{ fontWeight: 'bold' , fontSize: '15px'}}>Location:</span> {item.location}</p>
                                 <p className={styles.engine}><span style={{ fontWeight: 'bold', fontSize: '15px'}}>Engine:</span> {item.engine}</p>
                                 <p className={styles.year}><span style={{ fontWeight: 'bold' , fontSize: '15px'}}>Year:</span> {item.year}</p>
+                                <p className={styles.gearbox}><span style={{ fontWeight: 'bold' , fontSize: '15px'}}>gearbox:</span> {item.gearbox}</p>
+                                
                                 <p className={styles.price}>
                                     Current Bid: {item.currentBid}{' '}
                                     <span className={styles.offer}>Or Near Offer</span>
@@ -98,7 +100,8 @@ function ItemsListing({items, itemsIds, setItemsId, fetchAllData, styleSingleIte
                                     <input
                                         type="checkbox"
                                         className={styles['compare-checkbox']}
-                                        checked={itemsIds.includes(item._id) ? true : false} 
+                                        checked={itemsIds.includes(item._id) ? true : false}
+                                        readOnly 
                                         onClick={handleCheckboxChange(item._id)}
                                     />{' '}
                                 
