@@ -1,0 +1,43 @@
+name: mission5
+services:
+  backend:
+    build:
+      context: /Users/qo/Desktop/mission5/backend
+      dockerfile: Dockerfile
+    container_name: Misson5-Trademe-Backend
+    environment:
+      MONGODB_URI: mongodb://localhost:27017
+      PORT: "3000"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /Users/qo/Desktop/mission5/backend
+        target: /app
+        bind:
+          create_host_path: true
+      - type: volume
+        target: /app/node_modules
+        volume: {}
+  frontend:
+    build:
+      context: /Users/qo/Desktop/mission5/frontend
+      dockerfile: ./Dockerfile
+    container_name: Misson5-Trademe-frontend
+    environment:
+      NODE_ENV: production
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5173
+        published: "5173"
+        protocol: tcp
+networks:
+  default:
+    name: mission5_default

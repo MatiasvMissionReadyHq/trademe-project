@@ -40,7 +40,7 @@ const Carousel = (props) => {
                 photos.map((photo, index) => {
                     return (
                         <img key={index}
-                            src={`../../../../public/${photo}`}
+                            src={`/${photo}`}
                             alt={`Motorbike Image ${index + 1}`}
                             className={`
                                 ${styles['carousel-img']} 
