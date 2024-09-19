@@ -48,7 +48,17 @@ module.exports.getItems = async(req, res) => {
         // const singleResult = await collection.findOne({ type: "motorbike" });
         // get all documents
         const result = await collection.find().toArray();
+        
+        if(result?.length === 0){
 
+            const data = require('../items.vehicles.json');
+            const result = await collection.insertMany(data);
+            res.status(208).json(result);
+            // res.status(208).json({ error: 'data Base has been installed' });
+            await client.close();
+            return
+            
+        }   
         if (result === null) {
             res.status(404).json({ error: 'No results found' });
             return;
@@ -84,9 +94,10 @@ module.exports.getItemsById = async(req, res) => {
         const singleResult = await collection.findOne({ _id: new ObjectId(id) });
         // get all documents
         // const result = await collection.find().toArray();
-
         if (singleResult === null) {
+
             res.status(404).json({ error: 'No results found' });
+            await client.close();
             return;
         }
         res.status(200).json(singleResult);

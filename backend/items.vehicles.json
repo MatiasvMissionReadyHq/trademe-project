@@ -1,0 +1,149 @@
+[{
+
+    "photos": [
+      "afd23e3390ad0539d286d344d4e3a459.jpeg",
+      "images.jpeg"
+    ],
+    "type": "car",
+    "make": "Honda",
+    "year": "2009",
+    "model": " Accord",
+    "location": "Mount Maunganui, New Zealand",
+    "engine": "2000cc",
+    "currentBid": "$12,000",
+    "userBid": false,
+    "gearbox": "Automatic",
+    "cooling": "liquid"
+  },
+  {
+
+    "photos": [
+      "istockphoto-520889596-1024x1024.jpg",
+      "f0e5becd-c31f-4fef-8046-01d27b17f5b8.jpg"
+    ],
+    "type": "motorbike",
+    "make": "Honda",
+    "year": "2022",
+    "model": "cbr600rr",
+    "location": "Mount Maunganui, New Zealand",
+    "engine": "600cc",
+    "currentBid": "$18,000",
+    "userBid": false,
+    "gearbox": "Manual"
+  },
+  {
+
+    "make": "Kawasaki",
+    "model": "Brute Force 750 4x4i",
+    "year": "2022",
+    "type": "motorbike",
+    "displacement": "749.0 ccm (45.70 cubic inches)",
+    "engine": "V2, four-stroke",
+    "torque": "57.9 Nm (5.9 kgf-m or 42.7 ft.lbs) @ 4750 RPM",
+    "compression": "9.3:1",
+    "bore_stroke": "85.0 x 66.0 mm (3.3 x 2.6 inches)",
+    "valves_per_cylinder": "4",
+    "fuel_system": "Injection. DFI with 2 x 36mm Mikuni throttle bodies",
+    "fuel_control": "Single Overhead Cams (SOHC)",
+    "ignition": "TCBI with digital advance",
+    "cooling": "Liquid",
+    "gearbox": "Automatic",
+    "transmission": "Shaft drive (cardan)   (final drive)",
+    "frame": "Double-cradle, high-tensile tubular steel",
+    "front_suspension": "Double Wishbone",
+    "front_wheel_travel": "170 mm (6.7 inches)",
+    "rear_suspension": "Double wishbone",
+    "rear_wheel_travel": "191 mm (7.5 inches)",
+    "front_tire": "25/8-12 ",
+    "rear_tire": "25/10-12 ",
+    "front_brakes": "Double disc. Hydraulic. Two-piston calipers. ",
+    "rear_brakes": "Sealed multidisc",
+    "total_weight": "317.1 kg (699.0 pounds)",
+    "seat_height": "909 mm (35.8 inches) If adjustable, lowest setting.",
+    "total_height": "1219 mm (48.0 inches)",
+    "total_length": "2195 mm (86.4 inches)",
+    "total_width": "1181 mm (46.5 inches)",
+    "ground_clearance": "239 mm (9.4 inches)",
+    "wheelbase": "1285 mm (50.6 inches)",
+    "fuel_capacity": "18.93 litres (5.00 US gallons)",
+    "starter": "Electric",
+    "location": "Mount Maunganui, New Zealand",
+    "photos": [
+      "b2e9dfe4-2062-49f5-847d-0b585695ec7f.jpg",
+      "f0e5becd-c31f-4fef-8046-01d27b17f5b8.jpg"
+    ],
+    "userBid": true
+  },
+  {
+
+    "make": "Kawasaki",
+    "model": "KFX50",
+    "year": "2022",
+    "type": "motorbike",
+    "displacement": "49.5 ccm (3.02 cubic inches)",
+    "engine": "Single cylinder, four-stroke",
+    "compression": "10.8:1",
+    "bore_stroke": "39.0 x 41.4 mm (1.5 x 1.6 inches)",
+    "fuel_system": "Carburettor. Keihin PTE 16",
+    "ignition": "Solid state CDI",
+    "cooling": "Air",
+    "gearbox": "Automatic",
+    "transmission": "Chain   (final drive)",
+    "frame": "Double cradle, steel",
+    "front_suspension": "Single A-arm with twin shock absorbers ",
+    "front_wheel_travel": "71 mm (2.8 inches)",
+    "rear_suspension": "Swingarm with single shock absorber ",
+    "rear_wheel_travel": "74 mm (2.9 inches)",
+    "front_tire": "16/8-7 ",
+    "rear_tire": "16/8-7 ",
+    "front_brakes": "Expanding brake (drum brake). Dual",
+    "rear_brakes": "Single disc. Hydraulic. ",
+    "total_weight": "111.1 kg (245.0 pounds)",
+    "seat_height": "635 mm (25.0 inches) If adjustable, lowest setting.",
+    "total_height": "910 mm (35.8 inches)",
+    "total_length": "1400 mm (55.1 inches)",
+    "total_width": "880 mm (34.6 inches)",
+    "ground_clearance": "84 mm (3.3 inches)",
+    "wheelbase": "965 mm (38.0 inches)",
+    "fuel_capacity": "5.68 litres (1.50 US gallons)",
+    "starter": "Electric & kick",
+    "location": "Mount Maunganui, New Zealand",
+    "photos": [
+      "b2e9dfe4-2062-49f5-847d-0b585695ec7f.jpg",
+      "f0e5becd-c31f-4fef-8046-01d27b17f5b8.jpg"
+    ],
+    "userBid": false
+  },
+  {
+
+    "make": "Abbey",
+    "model": "Vogue",
+    "year": "2008",
+    "type": "caravan",
+    "total_weight": "1200 kg",
+    "location": "Mount Maunganui, New Zealand",
+    "photos": [
+      "2151618616.jpg",
+      "2151618660.jpg"
+    ],
+    "userBid": false
+  },
+  {
+
+    "make": "Beneteau",
+    "model": "Antares 8.8",
+    "year": "2017",
+    "type": "Boat",
+    "engine": "Yamaha Twin 150hp 4 stroke",
+    "ignition": "Full electric",
+    "gearbox": "Automatic",
+    "total_weight": "2017.1 kg",
+    "fuel_capacity": "40",
+    "location": "Hamilton, New Zealand",
+    "photos": [
+      "2150846574.jpg",
+      "2150846580.jpg",
+      "2150846574.jpg"
+    ],
+    "userBid": false
+  }]
