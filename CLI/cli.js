@@ -1,4 +1,3 @@
-// Import required packages
 const readlineSync = require('readline-sync');
 const { MongoClient, ObjectId } = require('mongodb');
 const e = require('cors');
