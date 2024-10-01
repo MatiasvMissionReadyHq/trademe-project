@@ -60,6 +60,7 @@ function App() {
   }, [selectedOption]);
 
   useEffect(() => {
+    // alert(location.pathname);
     if(location.pathname === "/"){
       fetchAllData();
     }
@@ -91,6 +92,7 @@ function App() {
       try{
           const response = await fetch('http://localhost:3000/getItems', options)
           const data = await response.json()
+          
           
           if(typeof(data?.insertedIds)!=='undefined'){
             console.log('Data inserted successfully');

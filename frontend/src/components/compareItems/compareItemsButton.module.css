@@ -15,3 +15,14 @@
 .compare-items-btn:hover {
     background-color: #c76a2c;
 }
+
+
+@media (min-width: 200px) and (max-width: 1000px) {
+    .compare-items-btn {
+        font-size: 12px;
+        right: 20px;
+        top: 20px;
+        padding: 10px 15px;
+    }
+    
+}

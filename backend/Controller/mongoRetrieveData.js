@@ -48,7 +48,7 @@ module.exports.getItems = async(req, res) => {
         // const singleResult = await collection.findOne({ type: "motorbike" });
         // get all documents
         const result = await collection.find().toArray();
-        
+        console.log(result?.length)
         if(result?.length === 0){
 
             const data = require('../items.vehicles.json');
