@@ -1,6 +1,5 @@
 const readlineSync = require('readline-sync');
 const { MongoClient, ObjectId } = require('mongodb');
-const e = require('cors');
 
 // MongoDB connection URI
 const uri = 'mongodb://localhost:27017';
