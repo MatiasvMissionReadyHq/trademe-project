@@ -13,7 +13,7 @@ The Trade Me Project focuses on redesigning the product listing page and refinin
 
 ## Technologies Used
 
-- **Front-End**: ReactJS, HTML, CSS
+- **Front-End**: ReactJS, nodejs, mongoDB, express
 - **Design Tool**: Figma for prototyping and user interface design
 
 ## Installation
